@@ -24,15 +24,25 @@ nav {
 
 #nav_pages li {
     display: inline-block;
+    font-weight: 500;
+}
+
+/* inavtive header has no underline */
+section#nav_pages ul li a {
+    text-decoration: none;
 }
 
 /* Active navigation link styling */
 #nav_pages a.active {
     color: var(--secondary-color);
-    
+    text-decoration: underline !important;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 2px !important;
+
+
     & li {
-        text-decoration: underline !important;
-        text-underline-offset: 5px;
+        /*text-decoration: underline !important;
+        text-underline-offset: 5px;*/
     }
 }
 
@@ -54,4 +64,3 @@ nav {
     color: var(--secondary-color);
     transition: color 150ms ease;
 }
-
