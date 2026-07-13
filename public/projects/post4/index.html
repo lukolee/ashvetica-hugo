@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-au"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Fourth Post | Ashvetica</title>
+    <meta name="description" content="A brief description">
+    <meta name="keywords" content="design, studio, website, development, branding, marketing, creative, agency">
+    <meta name="author" content="Ashley B">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#ff00ff" media="(prefers-color-scheme: light)">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/site/ashvetica_dot_logo-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/site/ashvetica_dot_logo-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/images/site/ashvetica_dot_logo-48x48.png">
+    
+    
+    
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/site/ashvetica_dot_logo-256x256.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/site/ashvetica_dot_logo-256x256.png">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/site/ashvetica_dot_logo-1024x1024.png">
+    
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/site/ashvetica_dot_logo-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/site/ashvetica_dot_logo-1024x1024.png">
+    
+    
+    <link rel="manifest" href="/manifest.json">
+    
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Ashvetica">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body><nav>
+    <section id="nav_pages">
+        <ul>
+            <li><a href="/">home</a></li>
+            <li><a href="/portfolio" class="active">portfolio</a></li>
+            <li><a href="/contact">contact</a></li>
+        </ul>
+    </section>
+    <h1 id="nav_logo"><a href="/" style="text-decoration: none; color: inherit;">Ashvetica<span class="logo-dot">.</span></a></h1>
+</nav>
+
+<main>
+<article class="project-page">
+    
+    
+    
+    
+    
+    <section class="project-page-container">
+    
+    
+        <section class="project-media">
+            <div class="media-gallery">
+                
+                
+                    <div class="media-item" data-lightbox="image" data-src="/images/project_assets/IMG4.png" data-caption="My Fourth Post">
+                        
+                            <img src="/images/project_assets/IMG4.png" alt="My Fourth Post" class="gallery-image">
+                        
+                    </div>
+                
+                
+                
+                
+            </div>
+        </section>
+    
+
+    
+    <section class="project-header">
+        <h1 class="project-title">My Fourth Post</h1>
+        
+            <p class="project-description">A brief description</p>
+        
+        
+            <time class="project-date" datetime="2025-01-14">
+                January 14, 2025
+            </time>
+        
+    </section>
+
+    
+    
+        <section class="project-content">
+            <div class="content-wrapper">
+                <p>POST 2 DESCRIPTION</p>
+
+            </div>
+        </section>
+    
+    </section>
+    
+    <section class="project-navigation">
+        <a href="#" onclick="history.back(); return false;" class="nav-link back-link">← Back</a>
+    </section>
+</article>
+
+
+<div id="lightbox-modal" class="lightbox-modal" style="display: none;">
+    <button class="lightbox-close" aria-label="Close lightbox">
+        <span class="lightbox-close-icon"></span>
+    </button>
+    <div class="lightbox-content">
+        <div class="lightbox-media">
+            <img id="lightbox-image" src="" alt="" class="lightbox-image">
+        </div>
+        <div class="lightbox-caption">
+            <h3 id="lightbox-title"></h3>
+            <h4 id="lightbox-alt"></h4>
+            <p id="lightbox-caption-text"></p>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('lightbox-modal');
+    const modalImage = document.getElementById('lightbox-image');
+    const modalCaption = document.getElementById('lightbox-caption-text');
+    const closeBtn = document.querySelector('.lightbox-close');
+    const mediaItems = document.querySelectorAll('.media-item[data-lightbox="image"]');
+    
+    
+    mediaItems.forEach(item => {
+        item.style.cursor = 'pointer';
+        item.addEventListener('click', function() {
+            const src = this.getAttribute('data-src');
+            const title = this.getAttribute('data-title') || '';
+            const alt = this.getAttribute('data-alt') || '';
+            const caption = this.getAttribute('data-caption') || '';
+            
+            modalImage.src = src;
+            modalImage.alt = alt || title || caption;
+            
+            const modalTitle = document.getElementById('lightbox-title');
+            const modalAlt = document.getElementById('lightbox-alt');
+            
+            modalTitle.textContent = title;
+            modalAlt.textContent = alt;
+            modalCaption.textContent = caption;
+            
+            
+            modalTitle.style.display = title ? 'block' : 'none';
+            modalAlt.style.display = alt ? 'block' : 'none';
+            modalCaption.style.display = caption ? 'block' : 'none';
+            
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+    });
+    
+    
+    function closeLightbox() {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+    
+    closeBtn.addEventListener('click', closeLightbox);
+    
+    
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            closeLightbox();
+        }
+    });
+    
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+            closeLightbox();
+        }
+    });
+});
+</script>
+
+        </main><footer>
+    <address>
+        <a href="mailto:contact@ashvetica.com">contact@ashvetica.com</a>
+    </address><div class="social-links"><a href="https://instagram.com/ashvetica" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            <span>Instagram</span>
+        </a><a href="https://behance.net/ashvetica" target="_blank" rel="noopener noreferrer" aria-label="Behance" class="social-link link">
+            
+            <span><b>Bē</b></span>
+            <span>Behance</span>
+        </a></div><p>
+        Copyright © 2026 Ashley B. All rights reserved.
+    </p>
+    <span>
+        <p>made with ❤️ by <a href="https://lukole.au" target="_blank" rel="noopener noreferrer">Luk Ole</a></p>
+    </span>
+</footer>
+
+</body>
+</html>

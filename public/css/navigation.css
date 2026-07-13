@@ -1,0 +1,57 @@
+/* Navigation Styles */
+
+/* Navigation bar - part of document flow, scrolls with content */
+nav {
+    width: 100%;
+    height: fit-content;
+    color: var(--primary-color);
+    box-sizing: border-box;
+}
+
+/* Navigation menu - flex layout for horizontal menu items */
+#nav_pages {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#nav_pages ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    padding-inline-start: 0;
+    margin: 0;
+}
+
+#nav_pages li {
+    display: inline-block;
+}
+
+/* Active navigation link styling */
+#nav_pages a.active {
+    color: var(--secondary-color);
+    
+    & li {
+        text-decoration: underline !important;
+        text-underline-offset: 5px;
+    }
+}
+
+/* Site logo typography */
+#nav_logo {
+    font-size: clamp(30pt, 12vw, 100pt);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin: 0;
+    transition: color 150ms ease;
+    width: fit-content;
+}
+
+.logo-dot {
+    transition: color 150ms ease;
+}
+/* Logo dot hover effect */
+#nav_logo a:hover .logo-dot {
+    color: var(--secondary-color);
+    transition: color 150ms ease;
+}
+

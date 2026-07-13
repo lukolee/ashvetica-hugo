@@ -1,0 +1,112 @@
+{{ define "main" }}
+    <script>
+        // Add contact-page class to main element
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('main').classList.add('contact-page');
+        });
+    </script>
+    
+    <section class="grid-section contact-section-intro">
+        <div class="contact-section-content">
+            <h1>{{ .Title }}</h1>
+            {{ if .Content }}
+                {{ .Content }}
+            {{ end }}
+        </div>
+    </section>
+    
+    <section class="grid-section contact-section-form">
+        <div class="contact-section-content">
+            <div id="form-message" class="contact-form-message"></div>
+            <form id="contact-form" class="contact-form">
+                <div class="contact-form-row">
+                    <div class="contact-form-field">
+                        <label for="name" class="contact-form-label">Name</label>
+                        <input type="text" id="name" name="name" class="contact-form-input" required>
+                    </div>
+                    
+                    <div class="contact-form-field">
+                        <label for="email" class="contact-form-label">Email</label>
+                        <input type="email" id="email" name="email" class="contact-form-input" required>
+                    </div>
+                </div>
+                
+                <div class="contact-form-field">
+                    <label for="subject" class="contact-form-label">Subject</label>
+                    <input type="text" id="subject" name="subject" class="contact-form-input" required>
+                </div>
+                
+                <div class="contact-form-field">
+                    <label for="message" class="contact-form-label">Message</label>
+                    <textarea id="message" name="message" rows="8" class="contact-form-textarea" required></textarea>
+                </div>
+                
+                <button type="submit" class="button contact-form-submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const address = '{{ .Site.Params.email }}';
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            // Create mailto link as fallback
+            const mailtoLink = `mailto:${address}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('From: ' + name + ' (' + email + ')\n\n' + message)}`;
+            
+            // Show success message
+            const messageDiv = document.getElementById('form-message');
+            messageDiv.classList.add('success');
+            messageDiv.textContent = 'Thank you for your message! Opening your email client...';
+            
+            // Open mailto link
+            window.location.href = mailtoLink;
+            
+            // Reset form after a delay
+            setTimeout(function() {
+                document.getElementById('contact-form').reset();
+                messageDiv.classList.remove('success');
+            }, 3000);
+        });
+    </script>
+        
+    <section class="grid-section contact-section-info">
+        <div class="contact-section-content">
+            <h2 class="contact-info-title">Get in Touch</h2>
+            <div class="contact-info-content">
+                <p>We'd love to hear from you. Whether you have a project in mind, a question about our services, or just want to say hello, feel free to reach out.</p>
+                <p>We typically respond within 24-48 hours.</p>
+                {{ if or .Site.Params.instagram .Site.Params.behance }}
+                <div class="contact-social-links">
+                    <h3>Follow me on</h3>
+                    {{ if .Site.Params.instagram }}
+                    <a href="https://instagram.com/{{ .Site.Params.instagram }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="contact-social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                        <span>Instagram</span>
+                    </a>
+                    {{ end }}
+                    {{ if .Site.Params.behance }}
+                    <a href="https://behance.net/{{ .Site.Params.behance }}" target="_blank" rel="noopener noreferrer" aria-label="Behance" class="contact-social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <text x="12" y="16" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="900" text-anchor="middle">Bē</text>
+                        </svg>
+                        <span>Behance</span>
+                    </a>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </section>
+{{ end }}
+

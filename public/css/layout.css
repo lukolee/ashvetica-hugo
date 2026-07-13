@@ -1,0 +1,191 @@
+/* Layout Styles - Main Grid, Grid Sections */
+
+/* Main content grid - responsive columns that adapt to viewport */
+main {
+    width: 100%;
+    min-height: fit-content;
+    margin-block-end: var(--spacing-main-bottom);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-main-gap);
+    padding-block: var(--spacing-main-padding-block);
+    box-sizing: border-box;
+    flex: 1 0 auto;
+    /* Grow to fill available space, allowing footer to stick to bottom */
+}
+
+/* Desktop viewport - fixed 4 column grid layout */
+@media (min-width: 1200px) {
+    main {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Grid section items - fill most of viewport when stacked, leaving peek of next */
+.grid-section {
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 70vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Make entire grid section clickable */
+.grid-section-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-decoration: none;
+    color: inherit;
+    z-index: 1;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.grid-section-link:hover {
+    opacity: 0.95;
+}
+
+/* Section titles positioned at bottom */
+.grid-section-link h1.grid-section-title {
+    font-size: 1em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--spacing-section-padding);
+    margin: 0;
+    z-index: 2;
+    color: inherit;
+    text-decoration: none;
+    mix-blend-mode: hard-light;
+    color: var(--primary-color);
+    cursor: pointer;
+    /* Ensure title shows pointer cursor */
+    pointer-events: auto;
+    /* Ensure title can receive pointer events */
+    /* background-color: #757373; */
+}
+
+/* Images fill sections edge-to-edge with cover */
+.grid-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Content overlay for paragraph text elements */
+.grid-section>p {
+    position: relative;
+    z-index: 1;
+    padding: var(--spacing-section-padding);
+    cursor: pointer;
+    /* Ensure paragraph shows pointer cursor when inside link */
+}
+
+/* Main intro section - override grid-section styles */
+#section-main {
+    padding: var(--spacing-section-padding) 22px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-section-gap);
+    overflow: visible;
+    min-height: auto !important;
+    background-color: var(--bg-white-transparent);
+}
+
+/* Ensure content is visible and not hidden by grid-section styles */
+#section-main>div {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+}
+
+/* Override grid-section image positioning for #section-main */
+#section-main img {
+    position: static;
+    width: auto;
+    height: auto;
+    object-fit: initial;
+}
+
+#section-main p {
+    margin: 0;
+    padding: 0;
+}
+
+#section-main a.button {
+    margin-top: 10px;
+}
+
+/* Desktop grid - consistent aspect ratio for all sections */
+@media (min-width: 460px) {
+    .grid-section {
+        min-height: auto;
+        /*Not used for admin site here */
+        aspect-ratio: 1 / 1.5;
+    }
+}
+
+@media (max-width: 510px) {
+    body {
+        padding-inline: var(--spacing-container-inline-mobile);
+    }
+
+    footer {
+        width: calc(100% + var(--spacing-footer-mobile-width-offset)) !important;
+        margin-inline: var(--spacing-footer-mobile-negative-margin) !important;
+    }
+
+    /* Single column mode - section-main height matches content */
+    #section-main {
+        height: auto;
+        min-height: auto;
+    }
+}
+
+/* Responsive adjustments for grid sections */
+@media (max-width: 970px) {
+    .section-dummy {
+        display: none;
+    }
+
+    #section-main p {
+        display: -webkit-box;
+        -webkit-line-clamp: 10;
+        line-clamp: 10;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+/* For screen smaller than larger ones */
+@media (max-width: 1499px) {
+    nav {
+        gap: 1em;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/*For larger screens*/
+@media (min-width: 1500px) {
+    body {
+        padding-inline: 200px !important;
+    }
+
+    footer {
+        width: calc(100% + 400px) !important;
+        margin-inline: -200px !important;
+    }
+}

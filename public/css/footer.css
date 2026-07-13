@@ -1,0 +1,60 @@
+/* Footer Styles */
+
+footer {
+    width: calc(100% + var(--spacing-footer-width-offset));
+    margin-inline: var(--spacing-footer-negative-margin);
+    height: 22em;
+    padding: var(--spacing-footer-padding-block) var(--spacing-footer-padding-inline);
+    box-sizing: border-box;
+    background-color: var(--footer-color);
+    backdrop-filter: blur(10px);
+    color: var(--primary-color);
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+footer > span > p {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Align author link to the bottom right of the footer */
+/* footer > span {
+    opacity: 0.5;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+} */
+
+/* Social Links in Footer */
+footer .social-links {
+    display: flex;
+    gap: var(--spacing-section-gap);
+    margin: var(--spacing-section-gap-small) 0;
+    align-items: center;
+}
+
+footer .social-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 14px;
+    transition: opacity 0.2s ease;
+}
+
+/* footer .social-link:hover {
+    opacity: 0.7;
+} */
+
+footer .social-link svg {
+    flex-shrink: 0;
+}
+
+

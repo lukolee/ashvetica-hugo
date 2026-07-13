@@ -1,0 +1,140 @@
+/* CSS Variables - Design Tokens */
+:root {
+    --primary-color: #333230;
+    --secondary-color: #e9bb04;
+    /* 2e57ed */
+    --tertiary-color: #f3f1f1;
+    --hover-color: #3332301c;
+    --footer-color: rgba(218, 204, 188, 0.8);
+
+    /* Text Colors */
+    --text-color: #333;
+    --text-color-dark: #333230;
+
+    /* Background Colors */
+    --bg-white: #ffffff;
+    --bg-black: #000;
+    --bg-white-transparent: #ffffffa0;
+    /* --bg-white-transparent: #6038f1c9; */
+    --bg-light-gray: #f5f5f5;
+    --bg-lightbox: rgba(238, 238, 238, 0.85);
+
+    /* UI Colors */
+    --gray-medium: #666;
+    --border-color: rgba(51, 50, 48, 0.2);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+
+    /* Alert Colors */
+    --alert-info-bg: rgba(233, 187, 4, 0.1);
+    --alert-info-border: var(--secondary-color);
+    --alert-info-text: var(--primary-color);
+    --alert-success-bg: rgba(51, 50, 48, 0.05);
+    --alert-success-border: var(--primary-color);
+    --alert-success-text: var(--primary-color);
+    --alert-error-bg: rgba(51, 50, 48, 0.1);
+    --alert-error-border: var(--primary-color);
+    --alert-error-text: var(--primary-color);
+
+    /* Health Indicator Colors */
+    --health-good: #629f09;
+    --health-warning: var(--secondary-color);
+    --health-bad: #8a2710;
+    --health-neutral: #a3ac9e;
+
+    /* Error Color */
+    --error-color: var(--primary-color);
+
+    /* Spacing Variables */
+
+    /* Spacing System - Global */
+    /* Spacing System - Container & Layout */
+    --spacing-container-inline: 40px; /* Body horizontal padding */
+    --spacing-container-inline-mobile: 20px; /* Body horizontal padding on mobile */
+    --spacing-container-top: 35px; /* Body top padding */
+    --spacing-main-bottom: 40px; /* Main bottom margin */
+    --spacing-main-padding-block: 20px; /* Main vertical padding */
+    --spacing-main-gap: 30px; /* Main grid gap */
+
+    /* Spacing System - Sections */
+    --spacing-section-padding: 20px; /* Standard section padding */
+    --spacing-section-padding-small: 10px; /* Small section padding */
+    --spacing-section-padding-large: 40px; /* Large section padding (lightbox) */
+    --spacing-section-gap: 20px; /* Standard gap between elements */
+    --spacing-section-gap-small: 15px; /* Small gap */
+    --spacing-section-gap-large: 30px; /* Large gap */
+
+    /* Spacing System - Footer */
+    --spacing-footer-padding-block: 10px; /* Footer vertical padding */
+    --spacing-footer-padding-inline: 20px; /* Footer horizontal padding */
+    --spacing-footer-negative-margin: calc(
+        -1 * var(--spacing-container-inline)
+    ); /* Negative margin to counteract body padding */
+    --spacing-footer-width-offset: calc(
+        2 * var(--spacing-container-inline)
+    ); /* Width extension beyond container */
+    --spacing-footer-mobile-negative-margin: calc(
+        -1 * var(--spacing-container-inline-mobile)
+    ); /* Mobile negative margin */
+    --spacing-footer-mobile-width-offset: calc(
+        2 * var(--spacing-container-inline-mobile)
+    ); /* Mobile width extension */
+
+    /* Spacing System - Buttons & Forms */
+    --spacing-button-padding-block: 15px; /* Button vertical padding */
+    --spacing-button-padding-inline: 20px; /* Button horizontal padding */
+    --spacing-form-padding: 12px; /* Form input padding */
+    --spacing-form-gap: 20px; /* Form field gap */
+
+    /* Spacing System - Content */
+    --spacing-content-padding: 20px; /* Content area padding */
+    --spacing-content-padding-small: 20px; /* Small content padding */
+    --spacing-content-padding-large: 30px; /* Large content padding */
+    --spacing-heading-margin-bottom: 20px; /* Heading bottom margin */
+}
+
+/* Dark Mode - Based on system preference */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #e0e0e0;
+        --secondary-color: #e9bb04;
+        --tertiary-color: #1a1a1a;
+        --hover-color: rgba(233, 187, 4, 0.15);
+        --footer-color: rgba(45, 42, 37, 0.8);
+
+        /* Text Colors */
+        --text-color: #e0e0e0;
+        --text-color-dark: #e0e0e0;
+
+        /* Background Colors */
+        --bg-white: #2a2a2a;
+        --bg-black: #000;
+        --bg-white-transparent: rgba(42, 42, 42, 0.95);
+        --bg-light-gray: #1f1f1f;
+        --bg-lightbox: rgba(30, 30, 30, 0.95);
+
+        /* UI Colors */
+        --gray-medium: #999;
+        --border-color: rgba(224, 224, 224, 0.2);
+        --shadow-color: rgba(0, 0, 0, 0.3);
+
+        /* Alert Colors */
+        --alert-info-bg: rgba(233, 187, 4, 0.15);
+        --alert-info-border: var(--secondary-color);
+        --alert-info-text: var(--secondary-color);
+        --alert-success-bg: rgba(98, 159, 9, 0.15);
+        --alert-success-border: var(--health-good);
+        --alert-success-text: var(--health-good);
+        --alert-error-bg: rgba(138, 39, 16, 0.2);
+        --alert-error-border: var(--health-bad);
+        --alert-error-text: #ff6b6b;
+
+        /* Health Indicator Colors */
+        --health-good: #7bc043;
+        --health-warning: var(--secondary-color);
+        --health-bad: #a63a3a;
+        --health-neutral: #888;
+
+        /* Error Color */
+        --error-color: #ff6b6b;
+    }
+}

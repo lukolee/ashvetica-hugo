@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-au"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Ashvetica</title>
+    <meta name="description" content="Ashvetica is a design studio that specializes in creating beautiful and functional websites.">
+    <meta name="keywords" content="design, studio, website, development, branding, marketing, creative, agency">
+    <meta name="author" content="Ashley B">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#ff00ff" media="(prefers-color-scheme: light)">
+    
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/site/ashvetica_dot_logo-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/site/ashvetica_dot_logo-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/images/site/ashvetica_dot_logo-48x48.png">
+    
+    
+    
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/site/ashvetica_dot_logo-256x256.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/site/ashvetica_dot_logo-256x256.png">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/site/ashvetica_dot_logo-1024x1024.png">
+    
+    
+    
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/site/ashvetica_dot_logo-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/site/ashvetica_dot_logo-1024x1024.png">
+    
+    
+    <link rel="manifest" href="/manifest.json">
+    
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Ashvetica">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body><nav>
+    <section id="nav_pages">
+        <ul>
+            <li><a href="/">home</a></li>
+            <li><a href="/portfolio">portfolio</a></li>
+            <li><a href="/contact" class="active">contact</a></li>
+        </ul>
+    </section>
+    <h1 id="nav_logo"><a href="/" style="text-decoration: none; color: inherit;">Ashvetica<span class="logo-dot">.</span></a></h1>
+</nav>
+
+<main>
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('main').classList.add('contact-page');
+        });
+    </script>
+    
+    <section class="grid-section contact-section-intro">
+        <div class="contact-section-content">
+            <h1>Contact</h1>
+            
+                <p>Let&rsquo;s work together to bring your vision to life. Reach out and let&rsquo;s start a conversation about your next project.</p>
+
+            
+        </div>
+    </section>
+    
+    <section class="grid-section contact-section-form">
+        <div class="contact-section-content">
+            <div id="form-message" class="contact-form-message"></div>
+            <form id="contact-form" class="contact-form">
+                <div class="contact-form-row">
+                    <div class="contact-form-field">
+                        <label for="name" class="contact-form-label">Name</label>
+                        <input type="text" id="name" name="name" class="contact-form-input" required>
+                    </div>
+                    
+                    <div class="contact-form-field">
+                        <label for="email" class="contact-form-label">Email</label>
+                        <input type="email" id="email" name="email" class="contact-form-input" required>
+                    </div>
+                </div>
+                
+                <div class="contact-form-field">
+                    <label for="subject" class="contact-form-label">Subject</label>
+                    <input type="text" id="subject" name="subject" class="contact-form-input" required>
+                </div>
+                
+                <div class="contact-form-field">
+                    <label for="message" class="contact-form-label">Message</label>
+                    <textarea id="message" name="message" rows="8" class="contact-form-textarea" required></textarea>
+                </div>
+                
+                <button type="submit" class="button contact-form-submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const address = 'contact@ashvetica.com';
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const subject = formData.get('subject');
+            const message = formData.get('message');
+            
+            
+            const mailtoLink = `mailto:${address}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('From: ' + name + ' (' + email + ')\n\n' + message)}`;
+            
+            
+            const messageDiv = document.getElementById('form-message');
+            messageDiv.classList.add('success');
+            messageDiv.textContent = 'Thank you for your message! Opening your email client...';
+            
+            
+            window.location.href = mailtoLink;
+            
+            
+            setTimeout(function() {
+                document.getElementById('contact-form').reset();
+                messageDiv.classList.remove('success');
+            }, 3000);
+        });
+    </script>
+        
+    <section class="grid-section contact-section-info">
+        <div class="contact-section-content">
+            <h2 class="contact-info-title">Get in Touch</h2>
+            <div class="contact-info-content">
+                <p>We'd love to hear from you. Whether you have a project in mind, a question about our services, or just want to say hello, feel free to reach out.</p>
+                <p>We typically respond within 24-48 hours.</p>
+                
+                <div class="contact-social-links">
+                    <h3>Follow me on</h3>
+                    
+                    <a href="https://instagram.com/ashvetica" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="contact-social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                        <span>Instagram</span>
+                    </a>
+                    
+                    
+                    <a href="https://behance.net/ashvetica" target="_blank" rel="noopener noreferrer" aria-label="Behance" class="contact-social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <text x="12" y="16" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="900" text-anchor="middle">Bē</text>
+                        </svg>
+                        <span>Behance</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+        </main><footer>
+    <address>
+        <a href="mailto:contact@ashvetica.com">contact@ashvetica.com</a>
+    </address><div class="social-links"><a href="https://instagram.com/ashvetica" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            <span>Instagram</span>
+        </a><a href="https://behance.net/ashvetica" target="_blank" rel="noopener noreferrer" aria-label="Behance" class="social-link link">
+            
+            <span><b>Bē</b></span>
+            <span>Behance</span>
+        </a></div><p>
+        Copyright © 2026 Ashley B. All rights reserved.
+    </p>
+    <span>
+        <p>made with ❤️ by <a href="https://lukole.au" target="_blank" rel="noopener noreferrer">Luk Ole</a></p>
+    </span>
+</footer>
+
+</body>
+</html>

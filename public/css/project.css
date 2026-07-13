@@ -1,0 +1,617 @@
+/* Project Page Styles */
+
+/* Override main grid for project pages - project page takes full width */
+.project-page {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    grid-column: 1 / -1;
+}
+
+.project-page-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Media Gallery Section - now takes hero image position */
+
+/* Project Header Section */
+.project-header {
+    flex: 0.75 1;
+    min-width: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.project-title {
+    font-size: clamp(2em, 3vw, 3.5em);
+    font-weight: 600;
+    color: var(--primary-color);
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+}
+
+.project-description {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: var(--primary-color);
+    margin: 0;
+    opacity: 0.8;
+}
+
+.project-date {
+    font-size: 0.9em;
+    color: var(--primary-color);
+    opacity: 0.6;
+    margin-top: 5px;
+}
+
+/* Project Content Section */
+.project-content {
+    flex: 1 1;
+    min-width: 0;
+    padding: 0;
+    display: none;
+}
+
+.content-wrapper {
+    font-size: 1em;
+    line-height: 1.8;
+    color: var(--primary-color);
+}
+
+.content-wrapper h1,
+.content-wrapper h2,
+.content-wrapper h3,
+.content-wrapper h4,
+.content-wrapper h5,
+.content-wrapper h6 {
+    color: var(--primary-color);
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-weight: 600;
+}
+
+.content-wrapper h1 {
+    font-size: 2em;
+}
+
+.content-wrapper h2 {
+    font-size: 1.75em;
+}
+
+.content-wrapper h3 {
+    font-size: 1.5em;
+}
+
+.content-wrapper p {
+    margin-bottom: 1.5em;
+}
+
+.content-wrapper ul,
+.content-wrapper ol {
+    margin-bottom: 1.5em;
+    padding-left: 2em;
+}
+
+.content-wrapper li {
+    margin-bottom: 0.5em;
+}
+
+.content-wrapper a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    transition: color 150ms ease;
+}
+
+.content-wrapper a:hover {
+    color: var(--secondary-color);
+}
+
+/* Media Gallery Section - takes hero image position */
+.project-media {
+    flex: 2 1;
+    min-width: 0;
+    padding: 0;
+}
+
+.media-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: 180px;
+    grid-auto-flow: dense;
+    gap: 20px 30px;
+    width: 100%;
+}
+
+.media-item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Flexible sizing - items can vary based on their natural aspect ratio */
+/* First image gets prominence */
+.media-item:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+    max-height: 400px;
+}
+
+/* Create variety with simple pattern that adapts */
+.media-item:nth-child(odd):not(:first-child) {
+    grid-row: span 2;
+    max-height: 400px;
+}
+
+.media-item:nth-child(4n):not(:first-child) {
+    grid-column: span 2;
+}
+
+/* Images fill their containers with max-height constraints */
+.gallery-image {
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+    background-color: var(--bg-white-transparent);
+}
+
+.gallery-video {
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+    background-color: var(--bg-black);
+}
+
+/* Items that span 2 rows use contain to prevent stretching */
+.media-item:nth-child(odd):not(:first-child) .gallery-image,
+.media-item:nth-child(odd):not(:first-child) .gallery-video,
+.media-item:first-child .gallery-image,
+.media-item:first-child .gallery-video {
+    object-fit: contain;
+    max-height: 400px;
+}
+
+/* Make clickable media items have pointer cursor */
+.media-item[data-lightbox="image"] {
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.media-item[data-lightbox="image"]:hover {
+    opacity: 0.9;
+}
+
+/* Lightbox Modal Styles */
+.lightbox-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-lightbox);
+    backdrop-filter: blur(10px);
+    padding: var(--spacing-section-padding-large);
+    box-sizing: border-box;
+}
+
+.lightbox-content {
+    display: flex;
+    max-width: 90vw;
+    max-height: 90vh;
+    gap: 40px;
+    align-items: flex-start;
+    position: relative;
+    justify-content: flex-start;
+}
+
+.lightbox-media {
+    flex: 0 1 auto;
+    max-width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: auto;
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.lightbox-caption {
+    flex: 0 0 35%;
+    max-width: 400px;
+    min-width: 300px;
+    max-height: 85vh;
+    min-height: 30vh;
+    background-color: var(--bg-white);
+    box-sizing: border-box;
+    overflow-y: auto;
+    padding: var(--spacing-content-padding-large);
+    padding-block-start: var(--spacing-content-padding-small);
+    
+}
+
+.lightbox-caption h3 {
+    margin: 0;
+    font-size: 1.2em;
+    line-height: 1.4;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.lightbox-caption h4 {
+    margin: 0.5em 0 0 0;
+    font-size: 1em;
+    line-height: 1.4;
+    color: var(--primary-color);
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.lightbox-caption p {
+    margin: 1em 0 0 0;
+    font-size: 1em;
+    line-height: 1.6;
+    color: var(--primary-color);
+}
+
+
+
+/* Close Button - Circular with white background and grey cross */
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--bg-white);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10001;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.lightbox-close:hover {
+    background-color: var(--bg-light-gray);
+}
+
+.lightbox-close-icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.lightbox-close-icon::before,
+.lightbox-close-icon::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background-color: var(--gray-medium);
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.lightbox-close-icon::before {
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.lightbox-close-icon::after {
+    transform: translateX(-50%) rotate(-45deg);
+}
+
+/* Responsive adjustments for lightbox */
+@media (max-width: 968px) {
+    .lightbox-modal {
+        padding: var(--spacing-section-padding-small);
+    }
+    
+    .lightbox-content {
+        flex-direction: column;
+        max-width: 100vw;
+        max-height: 100vh;
+        max-height: 100dvh; /* Dynamic viewport height for mobile browsers */
+        gap: 15px;
+        width: 100%;
+        height: 100%;
+        justify-content: flex-start;
+        /* align-items: stretch; */
+        align-items: center;
+    }
+    
+    .lightbox-media {
+        max-width: 100%;
+        width: 100%;
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-height: 50vh;
+        max-height: 50dvh; /* Dynamic viewport height for mobile browsers */
+    }
+    
+    .lightbox-image {
+        max-width: 100%;
+        max-height: 50vh;
+        max-height: 50dvh; /* Dynamic viewport height for mobile browsers */
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+    
+    .lightbox-caption {
+        flex: 1 1 auto;
+        max-width: 100%;
+        width: 92%;
+        padding: 0;
+        max-height: calc(50vh - 60px);
+        max-height: calc(50dvh - 60px); /* Dynamic viewport height for mobile browsers */
+        min-height: 0;
+        margin: 0;
+        position: relative;
+        overflow-y: auto;
+        overflow-x: hidden;
+        background-color: var(--bg-white);
+        /* Custom scrollbar styling - always visible and prominent */
+        scrollbar-width: auto;
+        scrollbar-color: rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.15);
+        /* WebKit fix: ensure proper clipping */
+        -webkit-overflow-scrolling: touch;
+        isolation: isolate;
+        /* Force WebKit to respect overflow boundaries */
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+    
+    /* Add the padding to the H3 rather than the div, such that the pseudo-element 
+    scroll indicator fading doesnt cut off strangely */
+    .lightbox-caption h3 {
+        padding-block-start: var(--spacing-content-padding-large) !important;
+    }
+
+    .lightbox-caption p {
+        padding-block-end: var(--spacing-content-padding-large) !important;
+    }
+
+    .lightbox-caption h3, .lightbox-caption h4, .lightbox-caption p {
+        padding-inline: var(--spacing-content-padding-large) !important;
+    }
+    
+    /* Webkit scrollbar styling - prominent and visible */
+    .lightbox-caption::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+    .lightbox-caption::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        margin: 5px 0;
+    }
+    
+    .lightbox-caption::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 5px;
+        border: 2px solid var(--bg-white);
+    }
+    
+    .lightbox-caption::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    
+    /* Subtle fade indicators at edges */
+    .lightbox-caption::before {
+        content: '';
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 20px;
+        background: linear-gradient(to bottom, var(--bg-white) 0%, transparent 100%);
+        pointer-events: none;
+        z-index: 2;
+        margin-bottom: -20px;
+        display: block;
+        /* WebKit fix: ensure it stays within bounds */
+        transform: translateZ(0);
+    }
+    
+    .lightbox-caption::after {
+        content: '';
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 20px;
+        background: linear-gradient(to top, var(--bg-white) 0%, transparent 100%);
+        pointer-events: none;
+        z-index: 1;
+        margin-top: -20px;
+        display: block;
+    }
+    
+    .lightbox-caption h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        padding-top: 5px;
+        /* WebKit fix: prevent content from appearing outside container */
+        position: relative;
+        z-index: 1;
+    }
+    
+    .lightbox-close {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .lightbox-close-icon {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .lightbox-close-icon::before,
+    .lightbox-close-icon::after {
+        height: 16px;
+    }
+}
+
+
+.media-caption {
+    font-size: 0.9em;
+    color: var(--primary-color);
+    opacity: 0.7;
+    margin: 0;
+    padding: 0 var(--spacing-section-padding-small);
+}
+
+.media-caption h3 {
+    font-size: 1em;
+    font-weight: 600;
+    font-style: normal;
+    margin: 0 0 0.25em 0;
+}
+
+.media-caption h4 {
+    font-size: 0.9em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 0 0 0.5em 0;
+    opacity: 0.8;
+}
+
+.media-caption p {
+    font-size: 0.85em;
+    font-style: italic;
+    margin: 0;
+    opacity: 0.7;
+    line-height: 1.4;
+}
+
+/* Project Navigation */
+.project-navigation {
+    padding: var(--spacing-content-padding-large) 0;
+    border-top: 1px solid var(--border-color);
+    margin-top: var(--spacing-section-gap);
+}
+
+.back-link {
+    font-size: 1em;
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 150ms ease;
+    display: inline-block;
+}
+
+.back-link:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+/* Responsive adjustments for project pages */
+@media (max-width: 967px) {
+    .project-page-container {
+        flex-direction: column-reverse;
+    }
+    
+    .project-hero,
+    .project-header,
+    .project-media {
+        flex: 1 1;
+        width: 100%;
+    }
+    
+    /* Simplify mosaic on mobile - single column */
+    .media-gallery {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+    
+    .media-item {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
+    
+    .gallery-image,
+    .gallery-video {
+        height: auto;
+        max-height: 80vh;
+        object-fit: contain;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    /* Tablet - 2 column mosaic */
+    .media-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 180px;
+    }
+    
+    .media-item:first-child {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    
+    .gallery-image,
+    .gallery-video {
+        max-height: 400px;
+    }
+}
+
+@media (min-width: 1200px) {
+    /* Desktop - flexible column mosaic */
+    .media-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        grid-auto-rows: 200px;
+        gap: 20px 30px;
+    }
+    
+    .gallery-image,
+    .gallery-video {
+        max-height: 450px;
+    }
+    
+    .project-page {
+        gap: 60px;
+    }
+    
+    .content-wrapper {
+        max-width: 800px;
+    }
+}
+
