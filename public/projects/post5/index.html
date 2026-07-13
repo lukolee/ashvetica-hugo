@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-au"><head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Fifth Post | ashvetica</title>
@@ -54,7 +54,7 @@
     
     
     
-    
+
     <section class="project-page-container">
     
     
@@ -68,7 +68,7 @@
                         
                     </div>
                 
-                
+
                 
                 
                     
@@ -88,9 +88,9 @@
                     
                         <div class="media-item" >
                             
-                                <video 
-                                    class="gallery-video" 
-                                    controls 
+                                <video
+                                    class="gallery-video"
+                                    controls
                                     poster="/images/project_assets/video1-poster.png"
                                     preload="metadata">
                                     <source src="/videos/video1.mp4" type="video/mp4">
@@ -126,14 +126,6 @@
     </section>
 
     
-    
-        <section class="project-content">
-            <div class="content-wrapper">
-                <p>POST 2 DESCRIPTION</p>
-
-            </div>
-        </section>
-    
     </section>
     
     <section class="project-navigation">
@@ -165,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalCaption = document.getElementById('lightbox-caption-text');
     const closeBtn = document.querySelector('.lightbox-close');
     const mediaItems = document.querySelectorAll('.media-item[data-lightbox="image"]');
-    
+
     
     mediaItems.forEach(item => {
         item.style.cursor = 'pointer';
@@ -174,42 +166,42 @@ document.addEventListener('DOMContentLoaded', function() {
             const title = this.getAttribute('data-title') || '';
             const alt = this.getAttribute('data-alt') || '';
             const caption = this.getAttribute('data-caption') || '';
-            
+
             modalImage.src = src;
             modalImage.alt = alt || title || caption;
-            
+
             const modalTitle = document.getElementById('lightbox-title');
             const modalAlt = document.getElementById('lightbox-alt');
-            
+
             modalTitle.textContent = title;
             modalAlt.textContent = alt;
             modalCaption.textContent = caption;
-            
+
             
             modalTitle.style.display = title ? 'block' : 'none';
             modalAlt.style.display = alt ? 'block' : 'none';
             modalCaption.style.display = caption ? 'block' : 'none';
-            
+
             modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
         });
     });
-    
+
     
     function closeLightbox() {
         modal.style.display = 'none';
         document.body.style.overflow = '';
     }
-    
+
     closeBtn.addEventListener('click', closeLightbox);
-    
+
     
     modal.addEventListener('click', function(e) {
         if (e.target === modal) {
             closeLightbox();
         }
     });
-    
+
     
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && modal.style.display === 'flex') {

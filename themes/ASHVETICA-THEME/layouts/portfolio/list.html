@@ -5,7 +5,7 @@
             document.querySelector('main').classList.add('portfolio-page');
         });
     </script>
-    
+
     {{/* Get all posts from projects section - use multiple methods for reliability */}}
     {{ $projectsSection := .Site.GetPage "section" "projects" }}
     {{ $posts := slice }}
@@ -22,7 +22,7 @@
     {{ if $posts }}
         {{ $posts = $posts.ByDate.Reverse }}
     {{ end }}
-    
+
     {{/* Main intro section */}}
     <section id="section-main" class="grid-section">
         {{ if .Content }}
@@ -30,10 +30,10 @@
                 {{ .Content }}
             </div>
         {{ else }}
-            <p>page</p>
+            <p>No projects...</p>
         {{ end }}
     </section>
-    
+
     {{/* Display all posts without dummy sections */}}
     {{ $postsCount := len $posts }}
     {{ if gt $postsCount 0 }}
@@ -42,4 +42,3 @@
         {{ end }}
     {{ end }}
 {{ end }}
-

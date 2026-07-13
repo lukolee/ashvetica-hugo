@@ -8,7 +8,7 @@
     {{ if not $heroImage }}
         {{ $heroImage = .Params.image }}
     {{ end }}
-    
+
     <section class="project-page-container">
     {{/* Media Gallery Section - includes hero image and all media */}}
     {{ if or $heroImage .Params.media }}
@@ -26,7 +26,7 @@
                         {{ end }}
                     </div>
                 {{ end }}
-                
+
                 {{/* Add all other media items */}}
                 {{ if .Params.media }}
                     {{ range .Params.media }}
@@ -34,9 +34,9 @@
                             {{ if eq .type "image" }}
                                 <img src="{{ .path | relURL }}" alt="{{ .alt | default "Project image" }}" class="gallery-image">
                             {{ else if eq .type "video" }}
-                                <video 
-                                    class="gallery-video" 
-                                    controls 
+                                <video
+                                    class="gallery-video"
+                                    controls
                                     {{ if .poster }}poster="{{ .poster | relURL }}"{{ end }}
                                     preload="metadata">
                                     <source src="{{ .path | relURL }}" type="video/mp4">
@@ -67,13 +67,6 @@
     </section>
 
     {{/* Project Content Section */}}
-    {{ if .Content }}
-        <section class="project-content">
-            <div class="content-wrapper">
-                {{ .Content }}
-            </div>
-        </section>
-    {{ end }}
     </section>
     {{/* Navigation Links */}}
     <section class="project-navigation">
@@ -105,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalCaption = document.getElementById('lightbox-caption-text');
     const closeBtn = document.querySelector('.lightbox-close');
     const mediaItems = document.querySelectorAll('.media-item[data-lightbox="image"]');
-    
+
     // Open lightbox
     mediaItems.forEach(item => {
         item.style.cursor = 'pointer';
@@ -114,42 +107,42 @@ document.addEventListener('DOMContentLoaded', function() {
             const title = this.getAttribute('data-title') || '';
             const alt = this.getAttribute('data-alt') || '';
             const caption = this.getAttribute('data-caption') || '';
-            
+
             modalImage.src = src;
             modalImage.alt = alt || title || caption;
-            
+
             const modalTitle = document.getElementById('lightbox-title');
             const modalAlt = document.getElementById('lightbox-alt');
-            
+
             modalTitle.textContent = title;
             modalAlt.textContent = alt;
             modalCaption.textContent = caption;
-            
+
             // Hide elements if empty
             modalTitle.style.display = title ? 'block' : 'none';
             modalAlt.style.display = alt ? 'block' : 'none';
             modalCaption.style.display = caption ? 'block' : 'none';
-            
+
             modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
         });
     });
-    
+
     // Close lightbox
     function closeLightbox() {
         modal.style.display = 'none';
         document.body.style.overflow = '';
     }
-    
+
     closeBtn.addEventListener('click', closeLightbox);
-    
+
     // Close on background click
     modal.addEventListener('click', function(e) {
         if (e.target === modal) {
             closeLightbox();
         }
     });
-    
+
     // Close on Escape key
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape' && modal.style.display === 'flex') {
@@ -159,4 +152,3 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 {{ end }}
-
