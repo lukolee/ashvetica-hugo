@@ -1,5 +1,7 @@
 name = "ashvetica-hugo"
 compatibility_date = "2024-07-01"
+preview_urls = true
+workers_dev = false
 
 [assets]
 directory = "./public"

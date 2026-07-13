@@ -172,7 +172,7 @@ main {
 /* For screen smaller than larger ones */
 @media (max-width: 1499px) {
     nav {
-        gap: 1em;
+        /*gap: 1em;*/
         display: flex;
         flex-direction: column;
     }

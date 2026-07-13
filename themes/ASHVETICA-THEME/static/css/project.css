@@ -233,7 +233,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    margin-right: auto;
+    /*margin-right: auto;*/
 }
 
 .lightbox-image {
@@ -256,7 +256,7 @@
     overflow-y: auto;
     padding: var(--spacing-content-padding-large);
     padding-block-start: var(--spacing-content-padding-small);
-    
+
 }
 
 .lightbox-caption h3 {
@@ -340,7 +340,7 @@
     .lightbox-modal {
         padding: var(--spacing-section-padding-small);
     }
-    
+
     .lightbox-content {
         flex-direction: column;
         max-width: 100vw;
@@ -353,7 +353,7 @@
         /* align-items: stretch; */
         align-items: center;
     }
-    
+
     .lightbox-media {
         max-width: 100%;
         width: 100%;
@@ -364,7 +364,7 @@
         max-height: 50vh;
         max-height: 50dvh; /* Dynamic viewport height for mobile browsers */
     }
-    
+
     .lightbox-image {
         max-width: 100%;
         max-height: 50vh;
@@ -373,7 +373,7 @@
         height: auto;
         object-fit: contain;
     }
-    
+
     .lightbox-caption {
         flex: 1 1 auto;
         max-width: 100%;
@@ -397,8 +397,8 @@
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
     }
-    
-    /* Add the padding to the H3 rather than the div, such that the pseudo-element 
+
+    /* Add the padding to the H3 rather than the div, such that the pseudo-element
     scroll indicator fading doesnt cut off strangely */
     .lightbox-caption h3 {
         padding-block-start: var(--spacing-content-padding-large) !important;
@@ -411,28 +411,28 @@
     .lightbox-caption h3, .lightbox-caption h4, .lightbox-caption p {
         padding-inline: var(--spacing-content-padding-large) !important;
     }
-    
+
     /* Webkit scrollbar styling - prominent and visible */
     .lightbox-caption::-webkit-scrollbar {
         width: 10px;
     }
-    
+
     .lightbox-caption::-webkit-scrollbar-track {
         background: rgba(0, 0, 0, 0.1);
         border-radius: 5px;
         margin: 5px 0;
     }
-    
+
     .lightbox-caption::-webkit-scrollbar-thumb {
         background-color: rgba(0, 0, 0, 0.5);
         border-radius: 5px;
         border: 2px solid var(--bg-white);
     }
-    
+
     .lightbox-caption::-webkit-scrollbar-thumb:hover {
         background-color: rgba(0, 0, 0, 0.7);
     }
-    
+
     /* Subtle fade indicators at edges */
     .lightbox-caption::before {
         content: '';
@@ -449,7 +449,7 @@
         /* WebKit fix: ensure it stays within bounds */
         transform: translateZ(0);
     }
-    
+
     .lightbox-caption::after {
         content: '';
         position: sticky;
@@ -463,7 +463,7 @@
         margin-top: -20px;
         display: block;
     }
-    
+
     .lightbox-caption h3 {
         margin-top: 0;
         margin-bottom: 10px;
@@ -472,19 +472,19 @@
         position: relative;
         z-index: 1;
     }
-    
+
     .lightbox-close {
         top: 10px;
         right: 10px;
         width: 40px;
         height: 40px;
     }
-    
+
     .lightbox-close-icon {
         width: 16px;
         height: 16px;
     }
-    
+
     .lightbox-close-icon::before,
     .lightbox-close-icon::after {
         height: 16px;
@@ -548,25 +548,25 @@
     .project-page-container {
         flex-direction: column-reverse;
     }
-    
+
     .project-hero,
     .project-header,
     .project-media {
         flex: 1 1;
         width: 100%;
     }
-    
+
     /* Simplify mosaic on mobile - single column */
     .media-gallery {
         grid-template-columns: 1fr;
         grid-auto-rows: auto;
     }
-    
+
     .media-item {
         grid-column: span 1 !important;
         grid-row: span 1 !important;
     }
-    
+
     .gallery-image,
     .gallery-video {
         height: auto;
@@ -581,12 +581,12 @@
         grid-template-columns: repeat(2, 1fr);
         grid-auto-rows: 180px;
     }
-    
+
     .media-item:first-child {
         grid-column: span 2;
         grid-row: span 2;
     }
-    
+
     .gallery-image,
     .gallery-video {
         max-height: 400px;
@@ -600,18 +600,17 @@
         grid-auto-rows: 200px;
         gap: 20px 30px;
     }
-    
+
     .gallery-image,
     .gallery-video {
         max-height: 450px;
     }
-    
+
     .project-page {
         gap: 60px;
     }
-    
+
     .content-wrapper {
         max-width: 800px;
     }
 }
-

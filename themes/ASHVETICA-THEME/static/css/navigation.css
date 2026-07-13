@@ -1,11 +1,16 @@
 /* Navigation Styles */
 
 /* Navigation bar - part of document flow, scrolls with content */
-nav {
+header {
     width: 100%;
     height: fit-content;
     color: var(--primary-color);
     box-sizing: border-box;
+
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: start;
 }
 
 /* Navigation menu - flex layout for horizontal menu items */
@@ -28,7 +33,7 @@ nav {
 }
 
 /* inavtive header has no underline */
-section#nav_pages ul li a {
+#nav_pages ul li a {
     text-decoration: none;
 }
 

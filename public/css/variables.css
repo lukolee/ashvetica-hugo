@@ -1,7 +1,7 @@
 /* CSS Variables - Design Tokens */
 :root {
     --primary-color: #333230;
-    --secondary-color: #e9bb04;
+    --secondary-color: #ff00ff; /* #e9bb04 */
     /* 2e57ed */
     --tertiary-color: #f3f1f1;
     --hover-color: #3332301c;
