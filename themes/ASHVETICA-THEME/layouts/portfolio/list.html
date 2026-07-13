@@ -1,0 +1,45 @@
+{{ define "main" }}
+    <script>
+        // Add portfolio-page class to main element
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('main').classList.add('portfolio-page');
+        });
+    </script>
+    
+    {{/* Get all posts from projects section - use multiple methods for reliability */}}
+    {{ $projectsSection := .Site.GetPage "section" "projects" }}
+    {{ $posts := slice }}
+    {{ if $projectsSection }}
+        {{/* Method 1: Get pages directly from the section (most reliable) */}}
+        {{ $posts = $projectsSection.RegularPages }}
+    {{ else }}
+        {{/* Fallback: Use filtered RegularPages if section not found */}}
+        {{ $posts = where .Site.RegularPages "Section" "eq" "projects" }}
+    {{ end }}
+    {{/* Filter out draft posts */}}
+    {{ $posts = where $posts "Draft" "!=" true }}
+    {{/* Sort by date */}}
+    {{ if $posts }}
+        {{ $posts = $posts.ByDate.Reverse }}
+    {{ end }}
+    
+    {{/* Main intro section */}}
+    <section id="section-main" class="grid-section">
+        {{ if .Content }}
+            <div>
+                {{ .Content }}
+            </div>
+        {{ else }}
+            <p>page</p>
+        {{ end }}
+    </section>
+    
+    {{/* Display all posts without dummy sections */}}
+    {{ $postsCount := len $posts }}
+    {{ if gt $postsCount 0 }}
+        {{ range $posts }}
+            {{ partial "post-section.html" . }}
+        {{ end }}
+    {{ end }}
+{{ end }}
+

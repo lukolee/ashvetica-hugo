@@ -1,0 +1,11 @@
+<nav>
+    <section id="nav_pages">
+        <ul>
+            <a href="{{ "/" | relURL }}"{{ if or (eq .RelPermalink "/") (eq .Kind "home") }} class="active"{{ end }}><li>home</li></a>
+            <a href="{{ "/portfolio" | relURL }}"{{ if or (eq .Section "portfolio") (eq .Section "projects") }} class="active"{{ end }}><li>portfolio</li></a>
+            <a href="{{ "/contact" | relURL }}"{{ if eq .Section "contact" }} class="active"{{ end }}><li>contact</li></a>
+        </ul>
+    </section>
+    <h1 id="nav_logo"><a href="{{ "/" | relURL }}" style="text-decoration: none; color: inherit;">{{ .Site.Title }}<span class="logo-dot">.</span></a></h1>
+</nav>
+

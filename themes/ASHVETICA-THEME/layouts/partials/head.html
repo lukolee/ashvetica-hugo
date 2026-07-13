@@ -1,0 +1,38 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description | default "Ashvetica is a design studio that specializes in creating beautiful and functional websites." }}{{ end }}">
+    <meta name="keywords" content="{{ if .Keywords }}{{ delimit .Keywords ", " }}{{ else }}design, studio, website, development, branding, marketing, creative, agency{{ end }}">
+    <meta name="author" content="{{ .Site.Params.author | default "Ashvetica" }}">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#ff00ff" media="(prefers-color-scheme: light)">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ "images/site/ashvetica_dot_logo-16x16.png" | relURL }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ "images/site/ashvetica_dot_logo-32x32.png" | relURL }}">
+    <link rel="icon" type="image/png" sizes="48x48" href="{{ "images/site/ashvetica_dot_logo-48x48.png" | relURL }}">
+    
+    <!-- Apple Touch Icons -->
+    <!-- Using higher resolution sources for Retina displays - iOS will scale down for better quality -->
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ "images/site/ashvetica_dot_logo-256x256.png" | relURL }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ "images/site/ashvetica_dot_logo-256x256.png" | relURL }}">
+    <!-- Note: 180x180 recommended for iOS 11+ - using 1024x1024 source for Retina quality (iOS scales down) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ "images/site/ashvetica_dot_logo-1024x1024.png" | relURL }}">
+    
+    <!-- Android/Chrome Icons -->
+    <!-- Note: 192x192 and 512x512 recommended for PWA -->
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ "images/site/ashvetica_dot_logo-192x192.png" | relURL }}">
+    <link rel="icon" type="image/png" sizes="512x512" href="{{ "images/site/ashvetica_dot_logo-1024x1024.png" | relURL }}">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="{{ "manifest.json" | relURL }}">
+    
+    <!-- Apple Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="{{ .Site.Title }}">
+    
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+</head>
+
