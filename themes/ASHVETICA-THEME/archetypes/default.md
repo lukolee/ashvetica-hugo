@@ -3,7 +3,7 @@ title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date.Format "2006-01-02" }}
 draft: true
 # Hero image displayed on index page
-hero_image: "/images/project_assets/hero-image.png"
+cover_image: "/images/project_assets/hero-image.png"
 # Alternative: use image for backward compatibility
 # image: "/images/project_assets/image.png"
 description: "A brief description"

@@ -3,22 +3,22 @@
 <section class="grid-section">
     <a href="{{ $post.RelPermalink }}" class="grid-section-link button-nohover">
         {{/* Get hero image - check multiple param name variations */}}
-        {{ $heroImage := $post.Params.hero_image }}
-        {{ if not $heroImage }}
-            {{ $heroImage = $post.Params.heroImage }}
+        {{ $coverImage := $post.Params.cover_image }}
+        {{ if not $coverImage }}
+            {{ $coverImage = $post.Params.coverImage }}
         {{ end }}
-        {{ if not $heroImage }}
-            {{ $heroImage = $post.Params.image }}
+        {{ if not $coverImage }}
+            {{ $coverImage = $post.Params.image }}
         {{ end }}
 
-        {{/* Output image if hero_image param exists */}}
-        {{ if $heroImage }}
-            {{ if hasPrefix $heroImage "/" }}
-                <img src="{{ $heroImage | relURL }}" alt="{{ $post.Title }}">
-            {{ else if $post.Resources.GetMatch $heroImage }}
-                <img src="{{ ($post.Resources.GetMatch $heroImage).RelPermalink }}" alt="{{ $post.Title }}">
+        {{/* Output image if cover_image param exists */}}
+        {{ if $coverImage }}
+            {{ if hasPrefix $coverImage "/" }}
+                <img src="{{ $coverImage | relURL }}" alt="{{ $post.Title }}">
+            {{ else if $post.Resources.GetMatch $coverImage }}
+                <img src="{{ ($post.Resources.GetMatch $coverImage).RelPermalink }}" alt="{{ $post.Title }}">
             {{ else }}
-                <img src="{{ $heroImage | relURL }}" alt="{{ $post.Title }}">
+                <img src="{{ $coverImage | relURL }}" alt="{{ $post.Title }}">
             {{ end }}
         {{ else if $post.Resources.GetMatch "hero*" }}
             <img src="{{ ($post.Resources.GetMatch "hero*").RelPermalink }}" alt="{{ $post.Title }}">

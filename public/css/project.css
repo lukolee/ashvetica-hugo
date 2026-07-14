@@ -135,6 +135,35 @@
     width: 100%;
 }
 
+.project-media .media-gallery--single {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+}
+
+.project-media .media-gallery--single {
+    grid-column: 1;
+    grid-row: 1;
+    max-height: none;
+}
+
+.project-media .media-gallery--single .gallery-image {
+    width: 100%;
+}
+
+
+.media-gallery--single .media-item:nth-child(odd):not(:first-child) .gallery-image,
+.media-gallery--single .media-item:nth-child(odd):not(:first-child) .gallery-video,
+.media-gallery--single .media-item:first-child .gallery-image,
+.media-gallery--single .media-item:first-child .gallery-video,
+.media-gallery--single .media-item:first-child {
+    max-height: 75vh;
+
+}
+/*.project-media .media-gallery--single .media-item:first-child,
+.project-media .media-gallery--single .gallery-image {
+    max-height: 75vh !important; /* not defined if image should be able to achieve any height */
+}*/
+
 .media-item {
     width: 100%;
     display: flex;

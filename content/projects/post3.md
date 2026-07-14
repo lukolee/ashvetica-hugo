@@ -1,7 +1,7 @@
 ---
 title: "My Third Post"
 date: 2025-01-12
-hero_image: "/images/project_assets/IMG3.png"
+cover_image: "/images/project_assets/IMG3.png"
 description: "A brief description"
 # media:
 #   - type: "image"

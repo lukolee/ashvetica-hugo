@@ -1,7 +1,7 @@
 ---
 title: "My First Post"
 date: 2025-01-17
-hero_image: "/images/project_assets/IMG1.png"
+cover_image: "/images/project_assets/IMG1.png"
 description: "A brief description"
 media:
   - type: "image"

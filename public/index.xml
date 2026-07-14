@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Ashvetica on ashvetica</title>
-		<link>https://ashvetica.com/</link>
+		<link>http://localhost:1313/</link>
 		<description>Recent content in Ashvetica on ashvetica</description>
 		<generator>Hugo</generator>
 		<language>en-au</language>
@@ -10,84 +10,91 @@
 		
 		
 		
-			<lastBuildDate>Fri, 02 Jan 2026 00:00:00 +0000</lastBuildDate>
+			<lastBuildDate>Tue, 14 Jul 2026 00:00:00 +0000</lastBuildDate>
 		
-			<atom:link href="https://ashvetica.com/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
 			<item>
-				<title>A Brand New Project</title>
-				<link>https://ashvetica.com/projects/20260102-a-brand-new-project/</link>
-				<pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
-				<guid>https://ashvetica.com/projects/20260102-a-brand-new-project/</guid>
+				<title>Nothing New</title>
+				<link>http://localhost:1313/projects/nothing-new/</link>
+				<pubDate>Tue, 14 Jul 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/projects/nothing-new/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>A Brand New Project</title>
-				<link>https://ashvetica.com/projects/202611-a-brand-new-project/</link>
+				<link>http://localhost:1313/projects/20260102-a-brand-new-project/</link>
+				<pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/projects/20260102-a-brand-new-project/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>A Brand New Project</title>
+				<link>http://localhost:1313/projects/202611-a-brand-new-project/</link>
 				<pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
-				<guid>https://ashvetica.com/projects/202611-a-brand-new-project/</guid>
+				<guid>http://localhost:1313/projects/202611-a-brand-new-project/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Why, Another!</title>
-				<link>https://ashvetica.com/projects/202611-why-another/</link>
+				<link>http://localhost:1313/projects/202611-why-another/</link>
 				<pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
-				<guid>https://ashvetica.com/projects/202611-why-another/</guid>
+				<guid>http://localhost:1313/projects/202611-why-another/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>My Test Project (image)</title>
-				<link>https://ashvetica.com/projects/20251231-my-test-project-image/</link>
+				<link>http://localhost:1313/projects/20251231-my-test-project-image/</link>
 				<pubDate>Wed, 31 Dec 2025 00:00:00 +0000</pubDate>
-				<guid>https://ashvetica.com/projects/20251231-my-test-project-image/</guid>
+				<guid>http://localhost:1313/projects/20251231-my-test-project-image/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Updated Project Title</title>
-				<link>https://ashvetica.com/projects/20250118-updated-project-title/</link>
+				<link>http://localhost:1313/projects/20250118-updated-project-title/</link>
 				<pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
-				<guid>https://ashvetica.com/projects/20250118-updated-project-title/</guid>
+				<guid>http://localhost:1313/projects/20250118-updated-project-title/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Updated Test Project</title>
-				<link>https://ashvetica.com/projects/20250118-updated-test-project/</link>
+				<link>http://localhost:1313/projects/20250118-updated-test-project/</link>
 				<pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
-				<guid>https://ashvetica.com/projects/20250118-updated-test-project/</guid>
+				<guid>http://localhost:1313/projects/20250118-updated-test-project/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>My First Post</title>
-				<link>https://ashvetica.com/projects/post1/</link>
+				<link>http://localhost:1313/projects/post1/</link>
 				<pubDate>Fri, 17 Jan 2025 00:00:00 +0000</pubDate>
-				<guid>https://ashvetica.com/projects/post1/</guid>
+				<guid>http://localhost:1313/projects/post1/</guid>
 				<description>&lt;p&gt;POST 1 CONTENT&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>My Fifth Post</title>
-				<link>https://ashvetica.com/projects/post5/</link>
+				<link>http://localhost:1313/projects/post5/</link>
 				<pubDate>Thu, 16 Jan 2025 00:00:00 +0000</pubDate>
-				<guid>https://ashvetica.com/projects/post5/</guid>
+				<guid>http://localhost:1313/projects/post5/</guid>
 				<description>&lt;p&gt;POST 2 DESCRIPTION&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>My Fourth Post</title>
-				<link>https://ashvetica.com/projects/post4/</link>
+				<link>http://localhost:1313/projects/post4/</link>
 				<pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
-				<guid>https://ashvetica.com/projects/post4/</guid>
+				<guid>http://localhost:1313/projects/post4/</guid>
 				<description>&lt;p&gt;POST 2 DESCRIPTION&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>My Third Post</title>
-				<link>https://ashvetica.com/projects/post3/</link>
+				<link>http://localhost:1313/projects/post3/</link>
 				<pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
-				<guid>https://ashvetica.com/projects/post3/</guid>
+				<guid>http://localhost:1313/projects/post3/</guid>
 				<description>&lt;p&gt;POST 2 DESCRIPTION&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>My Second Post</title>
-				<link>https://ashvetica.com/projects/post2/</link>
+				<link>http://localhost:1313/projects/post2/</link>
 				<pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
-				<guid>https://ashvetica.com/projects/post2/</guid>
+				<guid>http://localhost:1313/projects/post2/</guid>
 				<description>&lt;p&gt;POST 2 DESCRIPTION&lt;/p&gt;</description>
 			</item>
 	</channel>

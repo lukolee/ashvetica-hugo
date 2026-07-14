@@ -1,7 +1,7 @@
 ---
 title: "My Fourth Post"
 date: 2025-01-14
-hero_image: "/images/project_assets/IMG4.png"
+cover_image: "/images/project_assets/IMG4.png"
 description: "A brief description"
 # media:
 #   - type: "image"

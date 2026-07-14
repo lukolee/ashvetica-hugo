@@ -1,32 +1,22 @@
 {{ define "main" }}
 <article class="project-page">
     {{/* Hero Image Section */}}
-    {{ $heroImage := .Params.hero_image }}
-    {{ if not $heroImage }}
-        {{ $heroImage = .Params.heroImage }}
+    {{ $coverImage := .Params.cover_image }}
+    {{ if not $coverImage }}
+        {{ $coverImage = .Params.coverImage }}
     {{ end }}
-    {{ if not $heroImage }}
-        {{ $heroImage = .Params.image }}
+    {{ if not $coverImage }}
+        {{ $coverImage = .Params.image }}
     {{ end }}
 
-    <section class="project-page-container">
+    {{ $mediaCount := 0 }}
+    {{ if .Params.media }}{{ $mediaCount = add $mediaCount (len .Params.media) }}{{ end }}
+
+    <div class="project-page-container">
     {{/* Media Gallery Section - includes hero image and all media */}}
-    {{ if or $heroImage .Params.media }}
-        <section class="project-media">
-            <div class="media-gallery">
-                {{/* Add hero image as first item in gallery */}}
-                {{ if $heroImage }}
-                    <div class="media-item" data-lightbox="image" data-src="{{ if hasPrefix $heroImage "/" }}{{ $heroImage | relURL }}{{ else if .Resources.GetMatch $heroImage }}{{ (.Resources.GetMatch $heroImage).RelPermalink }}{{ else }}{{ $heroImage | relURL }}{{ end }}" data-caption="{{ .Title }}">
-                        {{ if hasPrefix $heroImage "/" }}
-                            <img src="{{ $heroImage | relURL }}" alt="{{ .Title }}" class="gallery-image">
-                        {{ else if .Resources.GetMatch $heroImage }}
-                            <img src="{{ (.Resources.GetMatch $heroImage).RelPermalink }}" alt="{{ .Title }}" class="gallery-image">
-                        {{ else }}
-                            <img src="{{ $heroImage | relURL }}" alt="{{ .Title }}" class="gallery-image">
-                        {{ end }}
-                    </div>
-                {{ end }}
-
+    {{ if or $coverImage .Params.media }}
+        <div class="project-media">
+            <div class="media-gallery {{ if eq $mediaCount 1 }} media-gallery--single{{ end }}">
                 {{/* Add all other media items */}}
                 {{ if .Params.media }}
                     {{ range .Params.media }}
@@ -50,7 +40,7 @@
                     {{ end }}
                 {{ end }}
             </div>
-        </section>
+        </div>
     {{ end }}
 
     {{/* Project Header Section */}}
@@ -67,7 +57,7 @@
     </section>
 
     {{/* Project Content Section */}}
-    </section>
+    </div>
     {{/* Navigation Links */}}
     <section class="project-navigation">
         <a href="#" onclick="history.back(); return false;" class="nav-link back-link">← Back</a>

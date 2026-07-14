@@ -1,7 +1,7 @@
 ---
 title: "My Test Project (image)"
 date: 2025-12-31
-hero_image: "/images/project_assets/my-test-project-image/1767161416961-test-image.jpg"
+cover_image: "/images/project_assets/my-test-project-image/1767161416961-test-image.jpg"
 description: "A descriptive project description"
 media:
   - type: "image"
@@ -25,4 +25,3 @@ media:
     alt: "A yellow diamon"
     caption: "Caption for diamond"
 ---
-

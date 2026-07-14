@@ -69,7 +69,7 @@ main {
     /* Ensure title shows pointer cursor */
     pointer-events: auto;
     /* Ensure title can receive pointer events */
-    /* background-color: #757373; */
+     background-color: #757373;
 }
 
 /* Images fill sections edge-to-edge with cover */

@@ -1,7 +1,7 @@
 ---
 title: "My Fifth Post"
 date: 2025-01-16
-hero_image: "/images/project_assets/IMG7.jpg"
+cover_image: "/images/project_assets/IMG7.jpg"
 description: "A brief description"
 media:
   - type: "image"

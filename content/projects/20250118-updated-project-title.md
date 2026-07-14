@@ -1,7 +1,7 @@
 ---
 title: "Updated Project Title"
 date: 2025-01-18
-hero_image: "/images/project_assets/updated-project-title/1234567890-test-image.jpg"
+cover_image: "/images/project_assets/updated-project-title/1234567890-test-image.jpg"
 description: "Updated description"
 media:
   - type: "image"
@@ -15,4 +15,3 @@ media:
     alt: "Description of gallery image 2"
     caption: "This is the second gallery image"
 ---
-
