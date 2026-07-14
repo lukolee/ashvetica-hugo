@@ -15,7 +15,7 @@
     {{ if $posts }}
         {{ $posts = $posts.ByDate.Reverse }}
     {{ end }}
-    
+
     {{/* Main intro section */}}
     <section id="section-main" class="grid-section">
         {{ if .Site.Home.Content }}
@@ -28,12 +28,12 @@
             </div>
         {{ else }}
             <p>
-                Ashvetica is a graphic design portfolio where creativity meets innovation to bring brands to life and connect with audiences on a deeper level. Our designs are a perfect blend of art and strategy, redefining brand identities and leaving a lasting impression.
+                {{ site.Params.homeBlurb }}
             </p>
             <a class="button" href="/portfolio">Explore Portfolio</a>
         {{ end }}
     </section>
-    
+
     {{/* Display posts in grid with specific pattern:
          Row 1: TEXT, image, dummy, image
          Row 2: image, dummy, image, dummy
@@ -44,34 +44,33 @@
     {{ if gt $postsCount 0 }}
         {{/* First post (position 1) */}}
         {{ partial "post-section.html" (index $posts 0) }}
-        
+
         {{/* Dummy section (position 2) */}}
         <section class="grid-section section-dummy"></section>
-        
+
         {{/* Second post (position 3) */}}
         {{ if gt $postsCount 1 }}
             {{ partial "post-section.html" (index $posts 1) }}
         {{ end }}
-        
+
         {{/* Third post (position 4) */}}
         {{ if gt $postsCount 2 }}
             {{ partial "post-section.html" (index $posts 2) }}
         {{ end }}
-        
+
         {{/* Dummy section (position 5) */}}
         {{ if gt $postsCount 2 }}
             <section class="grid-section section-dummy"></section>
         {{ end }}
-        
+
         {{/* Fourth post (position 6) */}}
         {{ if gt $postsCount 3 }}
             {{ partial "post-section.html" (index $posts 3) }}
         {{ end }}
-        
+
         {{/* Dummy section (position 7) */}}
         {{ if gt $postsCount 3 }}
             <section class="grid-section section-dummy"></section>
         {{ end }}
     {{ end }}
 {{ end }}
-

@@ -10,6 +10,9 @@ theme = "ASHVETICA-THEME"
   color = 'linen'                           # linen, wheat, gray, light
   email = 'contact@ashvetica.com'           # email for footer
   author = 'Ashley B'                       # author name for footer
+  homeBlurb = 'Ashvetica is a graphic design portfolio where creativity meets innovation to bring brands to life and connect with audiences on a deeper level. Our designs are a perfect blend of art and strategy, redefining brand identities and leaving a lasting impression.'
+  portfolioBlurb = ''
+
   pageAuthor = "Luk Ole"                    # Web Developer
   pageAuthorLink = "https://lukole.au"      # Link to developer site
 
@@ -18,10 +21,10 @@ theme = "ASHVETICA-THEME"
   behance = 'ashvetica'                         # behance.net/YOUR_BEHANCE_ID
   # rss = true                                # show rss icon
 
-  # home page profile
-  avatar = 'GRAVATAR_EMAIL'                 # gravatar email or image url
-  name = 'Ashley B'
-  bio = 'BIOGRAPHY'
+  # # home page profile
+  # avatar = 'GRAVATAR_EMAIL'                 # gravatar email or image url
+  # name = 'Ashley B'
+  # bio = 'BIOGRAPHY'
 
 # favicon = "favicon.ico"                   # customize the default favicon
 # appleTouchIcon = "apple-touch-icon.png"   # customize the default Apple touch icon

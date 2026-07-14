@@ -11,5 +11,5 @@ media:
     path: "/images/project_assets/nothing-new/Nothing-New.png"
     title: "Image 1"
     alt: "Alt text"
-    caption: "Caption"
+    # caption: "Caption"
 ---
