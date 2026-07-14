@@ -403,6 +403,21 @@
         object-fit: contain;
     }
 
+    /* No caption panel for this image - let the image take the full modal instead */
+    .lightbox-content.no-caption {
+        justify-content: center;
+    }
+
+    .lightbox-content.no-caption .lightbox-media {
+        max-height: 90vh;
+        max-height: 90dvh; /* Dynamic viewport height for mobile browsers */
+    }
+
+    .lightbox-content.no-caption .lightbox-image {
+        max-height: 90vh;
+        max-height: 90dvh; /* Dynamic viewport height for mobile browsers */
+    }
+
     .lightbox-caption {
         flex: 1 1 auto;
         max-width: 100%;

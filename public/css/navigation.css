@@ -17,6 +17,7 @@ header {
 #nav_pages {
     display: flex;
     justify-content: flex-end;
+    margin-left: auto;
 }
 
 #nav_pages ul {

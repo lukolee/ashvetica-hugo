@@ -161,7 +161,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             
             const captionBox = document.querySelector('.lightbox-caption');
+            const lightboxContent = document.querySelector('.lightbox-content');
             captionBox.style.display = caption ? 'block' : 'none';
+            lightboxContent.classList.toggle('no-caption', !caption);
 
             modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';

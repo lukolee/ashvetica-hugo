@@ -141,6 +141,10 @@ main {
         padding-inline: var(--spacing-container-inline-mobile);
     }
 
+    header {
+        flex-direction: column;
+    }
+
     footer {
         width: calc(100% + var(--spacing-footer-mobile-width-offset)) !important;
         margin-inline: var(--spacing-footer-mobile-negative-margin) !important;
