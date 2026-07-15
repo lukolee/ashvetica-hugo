@@ -14,16 +14,16 @@
         {{/* Output image if cover_image param exists */}}
         {{ if $coverImage }}
             {{ if hasPrefix $coverImage "/" }}
-                <img src="{{ $coverImage | relURL }}" alt="{{ $post.Title }}">
+                <img loading="lazy" src="{{ $coverImage | relURL }}" alt="{{ $post.Title }}">
             {{ else if $post.Resources.GetMatch $coverImage }}
-                <img src="{{ ($post.Resources.GetMatch $coverImage).RelPermalink }}" alt="{{ $post.Title }}">
+                <img loading="lazy" src="{{ ($post.Resources.GetMatch $coverImage).RelPermalink }}" alt="{{ $post.Title }}">
             {{ else }}
-                <img src="{{ $coverImage | relURL }}" alt="{{ $post.Title }}">
+                <img loading="lazy" src="{{ $coverImage | relURL }}" alt="{{ $post.Title }}">
             {{ end }}
         {{ else if $post.Resources.GetMatch "hero*" }}
-            <img src="{{ ($post.Resources.GetMatch "hero*").RelPermalink }}" alt="{{ $post.Title }}">
+            <img loading="lazy" src="{{ ($post.Resources.GetMatch "hero*").RelPermalink }}" alt="{{ $post.Title }}">
         {{ else if $post.Resources.GetMatch "feature*" }}
-            <img src="{{ ($post.Resources.GetMatch "feature*").RelPermalink }}" alt="{{ $post.Title }}">
+            <img loading="lazy" src="{{ ($post.Resources.GetMatch "feature*").RelPermalink }}" alt="{{ $post.Title }}">
         {{ end }}
 
         <h1 class="grid-section-title">

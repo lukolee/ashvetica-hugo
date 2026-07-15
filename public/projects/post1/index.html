@@ -67,7 +67,7 @@
                     
                         <div class="media-item" data-lightbox="image" data-src="/images/project_assets/IMG2.png" data-title="Image 2 Title" data-alt="Description of image 2" data-caption="Full caption details for image 2. This is where you can provide more comprehensive information about the image, including context, technical details, or any other relevant information.">
                             
-                                <img src="/images/project_assets/IMG2.png" alt="Description of image 2" class="gallery-image">
+                                <img loading="lazy" src="/images/project_assets/IMG2.png" alt="Description of image 2" class="gallery-image">
                             
                             
                                 <p class="media-caption">Image 2 Title</p>
@@ -76,7 +76,7 @@
                     
                         <div class="media-item" data-lightbox="image" data-src="/images/project_assets/IMG3.png" data-title="Image 3 Title" data-alt="Description of image 3" data-caption="Full caption details for image 3. This is where you can provide more comprehensive information about the image, including context, technical details, or any other relevant information.">
                             
-                                <img src="/images/project_assets/IMG3.png" alt="Description of image 3" class="gallery-image">
+                                <img loading="lazy" src="/images/project_assets/IMG3.png" alt="Description of image 3" class="gallery-image">
                             
                             
                                 <p class="media-caption">Image 3 Title</p>
@@ -85,7 +85,7 @@
                     
                         <div class="media-item" data-lightbox="image" data-src="/images/project_assets/IMG7.jpg" data-title="Image 7 Title" data-alt="Description of image 7. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." data-caption="Full caption details for image 7. This is where you can provide more comprehensive information about the image, including context, technical details, or any other relevant information. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.">
                             
-                                <img src="/images/project_assets/IMG7.jpg" alt="Description of image 7. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." class="gallery-image">
+                                <img loading="lazy" src="/images/project_assets/IMG7.jpg" alt="Description of image 7. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos." class="gallery-image">
                             
                             
                                 <p class="media-caption">Image 7 Title</p>
@@ -94,7 +94,7 @@
                     
                         <div class="media-item" data-lightbox="image" data-src="/images/project_assets/IMG8.png" data-title="Image 8 Title" data-alt="Description of image 8" data-caption="Full caption details for image 8. This is where you can provide more comprehensive information about the image, including context, technical details, or any other relevant information.">
                             
-                                <img src="/images/project_assets/IMG8.png" alt="Description of image 8" class="gallery-image">
+                                <img loading="lazy" src="/images/project_assets/IMG8.png" alt="Description of image 8" class="gallery-image">
                             
                             
                                 <p class="media-caption">Image 8 Title</p>
@@ -103,7 +103,7 @@
                     
                         <div class="media-item" data-lightbox="image" data-src="/images/project_assets/IMG7.jpg" data-title="Image 7 Title (Duplicate)" data-alt="Description of image 7" data-caption="Full caption details for the second image 7. This is where you can provide more comprehensive information about the image, including context, technical details, or any other relevant information.">
                             
-                                <img src="/images/project_assets/IMG7.jpg" alt="Description of image 7" class="gallery-image">
+                                <img loading="lazy" src="/images/project_assets/IMG7.jpg" alt="Description of image 7" class="gallery-image">
                             
                             
                                 <p class="media-caption">Image 7 Title (Duplicate)</p>
@@ -113,7 +113,7 @@
                         <div class="media-item" data-lightbox="image" data-src="/images/project_assets/IMG6.png" data-title="Image 6 Title" data-alt="Description of image 6." data-caption="Full caption details for image 6. This is where you can provide more comprehensive information about the image, including context, technical details, or any other relevant information. This caption can be as long as needed to provide all the necessary details about the image. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi facere aliquid consequatur molestias mollitia repudiandae quas cum magnam accusantium temporibus, ea unde? Doloremque at itaque earum blanditiis sint iure obcaecati fuga assumenda fugit commodi. Nostrum quibusdam doloremque aperiam? Vel mollitia debitis atque, maiores fugiat, ullam voluptatum modi vero soluta quasi fugit provident ipsum voluptate quae quo error aperiam autem blanditiis porro dolorem eum nemo tempore. Fuga, molestiae pariatur fugit explicabo impedit reprehenderit ipsam laboriosam aliquam vitae, aspernatur natus! Asperiores enim accusamus reprehenderit facilis, sed nihil! Eaque corporis fugiat porro vitae suscipit ad nobis nostrum? Amet suscipit quam eum aspernatur officiis!
 ">
                             
-                                <img src="/images/project_assets/IMG6.png" alt="Description of image 6." class="gallery-image">
+                                <img loading="lazy" src="/images/project_assets/IMG6.png" alt="Description of image 6." class="gallery-image">
                             
                             
                                 <p class="media-caption">Image 6 Title</p>
@@ -142,7 +142,7 @@
     </div>
     
     <section class="project-navigation">
-        <a href="#" onclick="history.back(); return false;" class="nav-link back-link">← Back</a>
+        <a href="/portfolio" class="nav-link back-link">← Back</a>
     </section>
 </article>
 
@@ -153,7 +153,7 @@
     </button>
     <div class="lightbox-content">
         <div class="lightbox-media">
-            <img id="lightbox-image" src="" alt="" class="lightbox-image">
+            <img loading="lazy" id="lightbox-image" src="" alt="" class="lightbox-image">
         </div>
 
         <div class="lightbox-caption">
@@ -164,72 +164,7 @@
     </div>
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const modal = document.getElementById('lightbox-modal');
-    const modalImage = document.getElementById('lightbox-image');
-    const modalCaption = document.getElementById('lightbox-caption-text');
-    const closeBtn = document.querySelector('.lightbox-close');
-    const mediaItems = document.querySelectorAll('.media-item[data-lightbox="image"]');
-
-    
-    mediaItems.forEach(item => {
-        item.style.cursor = 'pointer';
-        item.addEventListener('click', function() {
-            const src = this.getAttribute('data-src');
-            const title = this.getAttribute('data-title') || '';
-            const alt = this.getAttribute('data-alt') || '';
-            const caption = this.getAttribute('data-caption') || '';
-
-            modalImage.src = src;
-            modalImage.alt = alt || title || caption;
-
-            const modalTitle = document.getElementById('lightbox-title');
-            const modalAlt = document.getElementById('lightbox-alt');
-
-            modalTitle.textContent = title;
-            modalAlt.textContent = alt;
-            modalCaption.textContent = caption;
-
-            
-            modalTitle.style.display = title ? 'block' : 'none';
-            modalAlt.style.display = alt ? 'block' : 'none';
-            modalCaption.style.display = caption ? 'block' : 'none';
-
-            
-            const captionBox = document.querySelector('.lightbox-caption');
-            const lightboxContent = document.querySelector('.lightbox-content');
-            captionBox.style.display = caption ? 'block' : 'none';
-            lightboxContent.classList.toggle('no-caption', !caption);
-
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        });
-    });
-
-    
-    function closeLightbox() {
-        modal.style.display = 'none';
-        document.body.style.overflow = '';
-    }
-
-    closeBtn.addEventListener('click', closeLightbox);
-
-    
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            closeLightbox();
-        }
-    });
-
-    
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.style.display === 'flex') {
-            closeLightbox();
-        }
-    });
-});
-</script>
+<script defer src="/js/lightbox.js"></script>
 
         </main><footer>
     <address>

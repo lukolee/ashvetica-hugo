@@ -9,7 +9,12 @@ All components are designed with sustainability and circularity in mind, from th
 media:
   - type: "image"
     path: "/images/project_assets/nothing-new/Nothing-New.png"
-    title: "Image 1"
-    alt: "Alt text"
+    title: "Nothing New logo"
+    alt: "a design with an eye with eyelashes and underneath the text Nothing New."
     # caption: "Caption"
+  - type: "image"
+    path: "/images/project_assets/nothing-new/shirts.png"
+    title: "Shirts"
+    alt: "a blue, dark grey, and white shirt with custom ironed on prints on them."
+    # caption: ""
 ---

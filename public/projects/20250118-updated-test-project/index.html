@@ -67,7 +67,7 @@
                     
                         <div class="media-item" data-lightbox="image" data-src="/images/project_assets/updated-test-project/1234567891-gallery1.jpg" data-title="ONE" data-alt="New alt text" data-caption="New caption text">
                             
-                                <img src="/images/project_assets/updated-test-project/1234567891-gallery1.jpg" alt="New alt text" class="gallery-image">
+                                <img loading="lazy" src="/images/project_assets/updated-test-project/1234567891-gallery1.jpg" alt="New alt text" class="gallery-image">
                             
                             
                                 <p class="media-caption">ONE</p>
@@ -76,7 +76,7 @@
                     
                         <div class="media-item" data-lightbox="image" data-src="/images/project_assets/updated-test-project/1234567892-gallery2.jpg" data-title="TWO" data-alt="Description of gallery image 2" data-caption="This is the second gallery image">
                             
-                                <img src="/images/project_assets/updated-test-project/1234567892-gallery2.jpg" alt="Description of gallery image 2" class="gallery-image">
+                                <img loading="lazy" src="/images/project_assets/updated-test-project/1234567892-gallery2.jpg" alt="Description of gallery image 2" class="gallery-image">
                             
                             
                                 <p class="media-caption">TWO</p>
@@ -105,7 +105,7 @@
     </div>
     
     <section class="project-navigation">
-        <a href="#" onclick="history.back(); return false;" class="nav-link back-link">← Back</a>
+        <a href="/portfolio" class="nav-link back-link">← Back</a>
     </section>
 </article>
 
@@ -116,7 +116,7 @@
     </button>
     <div class="lightbox-content">
         <div class="lightbox-media">
-            <img id="lightbox-image" src="" alt="" class="lightbox-image">
+            <img loading="lazy" id="lightbox-image" src="" alt="" class="lightbox-image">
         </div>
 
         <div class="lightbox-caption">
@@ -127,72 +127,7 @@
     </div>
 </div>
 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const modal = document.getElementById('lightbox-modal');
-    const modalImage = document.getElementById('lightbox-image');
-    const modalCaption = document.getElementById('lightbox-caption-text');
-    const closeBtn = document.querySelector('.lightbox-close');
-    const mediaItems = document.querySelectorAll('.media-item[data-lightbox="image"]');
-
-    
-    mediaItems.forEach(item => {
-        item.style.cursor = 'pointer';
-        item.addEventListener('click', function() {
-            const src = this.getAttribute('data-src');
-            const title = this.getAttribute('data-title') || '';
-            const alt = this.getAttribute('data-alt') || '';
-            const caption = this.getAttribute('data-caption') || '';
-
-            modalImage.src = src;
-            modalImage.alt = alt || title || caption;
-
-            const modalTitle = document.getElementById('lightbox-title');
-            const modalAlt = document.getElementById('lightbox-alt');
-
-            modalTitle.textContent = title;
-            modalAlt.textContent = alt;
-            modalCaption.textContent = caption;
-
-            
-            modalTitle.style.display = title ? 'block' : 'none';
-            modalAlt.style.display = alt ? 'block' : 'none';
-            modalCaption.style.display = caption ? 'block' : 'none';
-
-            
-            const captionBox = document.querySelector('.lightbox-caption');
-            const lightboxContent = document.querySelector('.lightbox-content');
-            captionBox.style.display = caption ? 'block' : 'none';
-            lightboxContent.classList.toggle('no-caption', !caption);
-
-            modal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        });
-    });
-
-    
-    function closeLightbox() {
-        modal.style.display = 'none';
-        document.body.style.overflow = '';
-    }
-
-    closeBtn.addEventListener('click', closeLightbox);
-
-    
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            closeLightbox();
-        }
-    });
-
-    
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.style.display === 'flex') {
-            closeLightbox();
-        }
-    });
-});
-</script>
+<script defer src="/js/lightbox.js"></script>
 
         </main><footer>
     <address>
